@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'docker_factotum'
+    }
+
+  }
   stages {
     stage('prova') {
       parallel {
