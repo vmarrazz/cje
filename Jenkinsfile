@@ -15,5 +15,11 @@ pipeline {
       }
     }
 
+    stage('proviamo l\'input') {
+      steps {
+        input 'Che facciamo?'
+      }
+    }
+
   }
 }
