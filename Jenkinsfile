@@ -12,6 +12,7 @@ pipeline {
         stage('prova clone') {
           steps {
             echo 'sono il clone'
+            sh 'echo "ciao a tutti" >> artefatto.txt'
           }
         }
 
