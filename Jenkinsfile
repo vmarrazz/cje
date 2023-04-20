@@ -17,7 +17,7 @@ pipeline {
         stage('prova clone') {
           steps {
             echo 'sono il clone'
-            sh 'echo "ciao a tutti" >> artefatto.txt'
+            sh 'echo "ciao a tutti" >> artefatto_${GIT_COMMIT:0:6}.txt'
             archiveArtifacts(artifacts: '*.txt', fingerprint: true)
             cleanWs(cleanWhenSuccess: true)
           }
