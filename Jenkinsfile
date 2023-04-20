@@ -13,6 +13,7 @@ pipeline {
           steps {
             echo 'sono il clone'
             sh 'echo "ciao a tutti" >> artefatto.txt'
+            archiveArtifacts(artifacts: '*,txt', fingerprint: true)
           }
         }
 
