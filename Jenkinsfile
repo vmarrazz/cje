@@ -27,5 +27,14 @@ pipeline {
       }
     }
 
+    stage('solo master') {
+      when {
+        branch 'master'
+      }
+      steps {
+        echo 'questo è master!!!!'
+      }
+    }
+
   }
 }
