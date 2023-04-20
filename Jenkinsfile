@@ -27,12 +27,12 @@ pipeline {
       }
     }
 
-    stage('solo master') {
+    stage('solo conditional') {
       when {
-        branch 'master'
+        branch 'conditional'
       }
       steps {
-        echo 'questo è master!!!!'
+        echo 'solo su conditional'
       }
     }
 
