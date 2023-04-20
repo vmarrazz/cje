@@ -4,6 +4,7 @@ pipeline {
     stage('prova') {
       steps {
         echo 'siamo in una prova'
+        sh 'echo "cavolo!" >> example.txt'
         stash(name: 'prova1', includes: '*.txt')
       }
     }
