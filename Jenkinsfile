@@ -11,6 +11,7 @@ pipeline {
         stage('prova') {
           steps {
             echo 'siamo in una prova'
+            sh 'env | grep GIT_'
           }
         }
 
