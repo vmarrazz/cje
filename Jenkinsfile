@@ -2,8 +2,19 @@ pipeline {
   agent any
   stages {
     stage('prova') {
-      steps {
-        echo 'siamo in una prova'
+      parallel {
+        stage('prova') {
+          steps {
+            echo 'siamo in una prova'
+          }
+        }
+
+        stage('prova clone') {
+          steps {
+            echo 'sono il clone'
+          }
+        }
+
       }
     }
 
