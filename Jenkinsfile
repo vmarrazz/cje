@@ -1,25 +1,14 @@
 pipeline {
-  agent any
+  agent none
   stages {
-    stage('prova') {
+    stage('checkparameters') {
       steps {
-        echo 'siamo in una prova'
-        sh 'echo "cavolo!" >> example.txt'
-        stash(name: 'prova1', includes: '*.txt')
+        sh 'echo "print"'
       }
     }
 
-    stage('devo unstash') {
-      steps {
-        unstash 'prova1'
-      }
-    }
-
-    stage('proviamo l\'input') {
-      steps {
-        input 'Che facciamo?'
-      }
-    }
-
+  }
+  environment {
+    ciao = 'ciao'
   }
 }
